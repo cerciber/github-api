@@ -25,8 +25,8 @@ module.exports = {
   ],
   tags: [
     {
-      name: 'General',
-      description: 'General requests.',
+      name: 'GitHubAPI',
+      description: 'GitHub API requests.',
     },
   ],
   components: {

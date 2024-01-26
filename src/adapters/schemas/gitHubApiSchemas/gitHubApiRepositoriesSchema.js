@@ -3,17 +3,17 @@ const _ = require('lodash');
 const {
   getSchemaExampleFromExamples,
 } = require('@src/adapters/controllers/schemas/schemaController');
-const userSchema = require('./userSchema');
+const gitHubApiRepositorySchema = require('./gitHubApiRepositorySchema');
 
 // Extract example
-const exampleItem = getSchemaExampleFromExamples(userSchema);
+const exampleItem = getSchemaExampleFromExamples(gitHubApiRepositorySchema);
 
 // Exports
 module.exports = _.cloneDeep({
-  Users: {
-    title: 'fakeApiUsers',
+  GitHubApiRepositories: {
+    title: 'gitHubApiRepositories',
     type: 'array',
-    items: userSchema.User,
+    items: gitHubApiRepositorySchema.GitHubApiRepository,
     example: [exampleItem, exampleItem, exampleItem],
   },
 });

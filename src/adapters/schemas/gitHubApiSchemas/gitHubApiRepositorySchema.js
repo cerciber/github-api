@@ -3,25 +3,25 @@ const _ = require('lodash');
 
 // Exports
 module.exports = _.cloneDeep({
-  UserAuth: {
-    title: 'fakeApiUserAuth',
+  GitHubApiRepository: {
+    title: 'gitHubApiRepository',
     type: 'object',
     properties: {
       id: {
         type: 'string',
       },
-      username: {
+      name: {
         type: 'string',
       },
-      password: {
+      description: {
         type: 'string',
       },
     },
     example: {
-      id: '1',
-      username: 'cesar123',
-      password: '7Y87YH8GG6Y8',
+      id: '345345454',
+      name: 'material-design-icons',
+      description: 'Material Design icons by Google',
     },
-    required: ['id', 'username', 'password'],
+    required: ['id', 'name', 'description'],
   },
 });
