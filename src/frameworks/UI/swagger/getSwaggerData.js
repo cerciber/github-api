@@ -2,6 +2,7 @@
 const swaggerJsdoc = require('swagger-jsdoc');
 const paths = require('@src/utils/statics/paths');
 const constants = require('@src/utils/statics/constants');
+const config = require('@src/utils/statics/config');
 const {
   loadSchemasFromFolder,
   loadSchemasFromFolders,
@@ -26,6 +27,13 @@ function getSwaggerData() {
 
   // Set response schemas
   swaggerData.components.responses = responseSchemas;
+
+  // Set url
+  swaggerData.servers = [
+    {
+      url: `${config.frameworks.web.express.url}:${config.frameworks.web.express.port}/`,
+    },
+  ];
 
   // Set Swagger config
   const swaggerDocs = swaggerJsdoc({

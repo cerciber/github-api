@@ -1,9 +1,9 @@
 module.exports = {
   openapi: '3.0.3',
   info: {
-    title: 'Node clean architecture',
+    title: 'GitHub API consumer',
     description:
-      'Solid architecture for Node.js implementing Clean Architecture. Node.js.',
+      'Technical challenge to be a Node.js Backend Developer in BeMaster. Node.js.',
     termsOfService: '',
     contact: {
       email: 'cerciber@hotmail.com',
@@ -18,11 +18,7 @@ module.exports = {
     description: 'Find out more about Node clean architecture',
     url: 'https://github.com/cerciber/node-solid-architecture',
   },
-  servers: [
-    {
-      url: 'http://localhost:3009/',
-    },
-  ],
+  servers: [],
   tags: [
     {
       name: 'GitHubAPI',

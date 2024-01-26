@@ -3,6 +3,7 @@ module.exports = {
   frameworks: {
     web: {
       express: {
+        url: process.env.EXPRESS_URL || '',
         port: Number(process.env.EXPRESS_PORT) || 3000,
       },
     },
@@ -14,7 +15,7 @@ module.exports = {
       },
     },
     octokit: {
-      gitHubApiKey: process.env.GITHUB_API_KEY,
+      gitHubApiKey: process.env.GITHUB_API_KEY || '',
     },
   },
   application: {},
