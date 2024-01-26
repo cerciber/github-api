@@ -13,13 +13,10 @@ module.exports = {
         maxFiles: Number(process.env.WINSTON_MAX_FILES) || 5,
       },
     },
+    octokit: {
+      gitHubApiKey: process.env.GITHUB_API_KEY,
+    },
   },
-  application: {
-    jwtSectetKey: process.env.JWT_SECRET_KEY || 'SECRET_KEY',
-    jwtDuration: process.env.JWT_DURATION || '1h',
-  },
-  entities: {
-    passwordEncryptSaltRounds:
-      Number(process.env.PASSWORD_ENCRYPT_SALT_ROUNDS) || 10,
-  },
+  application: {},
+  entities: {},
 };

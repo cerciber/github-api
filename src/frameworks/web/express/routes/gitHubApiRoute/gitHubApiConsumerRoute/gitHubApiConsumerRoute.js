@@ -1,8 +1,8 @@
 // Imports
 const sendResponse = require('@src/frameworks/web/express/sendResponse');
 const {
-  getUserslistController,
-} = require('@src/adapters/controllers/apisController/fakeApiControllers/user/userController');
+  getTop10GoogleRespositoriesController,
+} = require('@src/adapters/controllers/apisController/gitHubApiControllers/gitHubApiConsumerController/gitHubApiConsumerController');
 const paths = require('@src/utils/statics/paths');
 const router = require('@src/frameworks/web/express/router')();
 
@@ -31,7 +31,11 @@ const router = require('@src/frameworks/web/express/router')();
 router.get(
   paths.gitHubApiConsumerGetTop10GoogleRespositories.path,
   async (req, res) => {
-    return sendResponse(req, res, await getUserslistController());
+    return sendResponse(
+      req,
+      res,
+      await getTop10GoogleRespositoriesController()
+    );
   }
 );
 

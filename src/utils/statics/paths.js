@@ -14,7 +14,7 @@ paths.api = { path: `${paths.root.path}/api`, public: false };
 paths.gitHubApiConsumer = { path: `${paths.api.path}/consumer`, public: false };
 paths.gitHubApiConsumerGetTop10GoogleRespositories = {
   path: `${paths.gitHubApiConsumer.path}/get-top-10-google-respositories`,
-  public: false,
+  public: true,
 };
 
 // Exports

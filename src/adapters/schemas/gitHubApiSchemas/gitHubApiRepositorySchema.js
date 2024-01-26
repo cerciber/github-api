@@ -7,8 +7,11 @@ module.exports = _.cloneDeep({
     title: 'gitHubApiRepository',
     type: 'object',
     properties: {
+      number: {
+        type: 'number',
+      },
       id: {
-        type: 'string',
+        type: 'number',
       },
       name: {
         type: 'string',
@@ -16,12 +19,21 @@ module.exports = _.cloneDeep({
       description: {
         type: 'string',
       },
+      stars: {
+        type: 'number',
+      },
+      forks: {
+        type: 'number',
+      },
     },
     example: {
-      id: '345345454',
+      number: 1,
+      id: 345345454,
       name: 'material-design-icons',
       description: 'Material Design icons by Google',
+      stars: 345454,
+      forks: 234,
     },
-    required: ['id', 'name', 'description'],
+    required: ['number', 'id', 'name', 'description', 'stars', 'forks'],
   },
 });
