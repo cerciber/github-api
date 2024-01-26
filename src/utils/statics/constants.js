@@ -3,5 +3,8 @@ module.exports = {
   SWAGGER_SCAN_PATHS: ['./src/frameworks/web/express/routes/**/*.js'],
 
   // Paths to scan schemas
-  SCHEMAS_SCAN_PATHS: ['@src/adapters/schemas/gitHubApiSchemas'],
+  SCHEMAS_SCAN_PATHS: [
+    '@src/adapters/schemas/gitHubApiSchemas',
+    '@src/adapters/schemas/response',
+  ],
 };

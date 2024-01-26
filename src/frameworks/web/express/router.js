@@ -1,9 +1,8 @@
 // Imports
 const express = require('express');
-const validateAccessMiddleware = require('@src/frameworks/web/express/middelwares/validateAccessMiddleware');
 
 // Intermediate middlewares (After that router identify paths and methods, before logic)
-const intermediateMiddlewares = [validateAccessMiddleware];
+const intermediateMiddlewares = [];
 
 // Router instancer
 module.exports = () => {
