@@ -8,6 +8,7 @@ function loadSchemasFromFolder(folderPath) {
   const schemas = {};
 
   // Get absolute path from alias
+  console.log(`config.enviroment: ${config.enviroment}`);
   let absolutePath;
   if (config.enviroment === 'producction') {
     const absoluteCurrentPathParts = __dirname.split('/src');
@@ -30,6 +31,7 @@ function loadSchemasFromFolder(folderPath) {
   }
 
   // Read files
+  console.log(`absolutePath: ${absolutePath}`);
   const files = fs.readdirSync(absolutePath);
 
   // Add schemas to object
