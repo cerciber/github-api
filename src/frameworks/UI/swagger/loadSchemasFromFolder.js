@@ -8,9 +8,8 @@ function loadSchemasFromFolder(folderPath) {
   const schemas = {};
 
   // Get absolute path from alias
-  console.log(`config.enviroment: ${config.enviroment}`);
   let absolutePath;
-  if (config.enviroment === 'producction') {
+  if (config.enviroment === 'production') {
     const absoluteCurrentPathParts = __dirname.split('/src');
     const srcPath = absoluteCurrentPathParts
       .slice(0, absoluteCurrentPathParts.length - 1)
@@ -19,7 +18,8 @@ function loadSchemasFromFolder(folderPath) {
       .replace(/@/, '/')
       .replace(/\//g, '/');
     absolutePath = srcPath + aliasPathCorrection;
-  } else {
+  }
+  if (config.enviroment === 'develop') {
     const absoluteCurrentPathParts = __dirname.split('\\src');
     const srcPath = absoluteCurrentPathParts
       .slice(0, absoluteCurrentPathParts.length - 1)
@@ -28,10 +28,11 @@ function loadSchemasFromFolder(folderPath) {
       .replace(/@/, '\\')
       .replace(/\//g, '\\');
     absolutePath = srcPath + aliasPathCorrection;
+  } else {
+    throw Error('Enviroment no identified');
   }
 
   // Read files
-  console.log(`absolutePath: ${absolutePath}`);
   const files = fs.readdirSync(absolutePath);
 
   // Add schemas to object
