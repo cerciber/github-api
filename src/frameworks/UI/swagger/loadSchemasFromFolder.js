@@ -1,6 +1,5 @@
 // Imports
 const fs = require('fs');
-const path = require('path');
 const config = require('@src/utils/statics/config');
 
 // Load schemas from folder
@@ -11,9 +10,14 @@ function loadSchemasFromFolder(folderPath) {
   // Get absolute path from alias
   let absolutePath;
   if (config.enviroment === 'producction') {
-    const srcPath = path.join(__dirname, '..');
-    const aliasPathCorrection = folderPath.replace(/@/, path.sep);
-    absolutePath = path.join(srcPath, aliasPathCorrection);
+    const absoluteCurrentPathParts = __dirname.split('/src');
+    const srcPath = absoluteCurrentPathParts
+      .slice(0, absoluteCurrentPathParts.length - 1)
+      .join('/src');
+    const aliasPathCorrection = folderPath
+      .replace(/@/, '/')
+      .replace(/\//g, '/');
+    absolutePath = srcPath + aliasPathCorrection;
   } else {
     const absoluteCurrentPathParts = __dirname.split('\\src');
     const srcPath = absoluteCurrentPathParts
@@ -24,7 +28,6 @@ function loadSchemasFromFolder(folderPath) {
       .replace(/\//g, '\\');
     absolutePath = srcPath + aliasPathCorrection;
   }
-  console.log(`absolutePath: ${absolutePath}`);
 
   // Read files
   const files = fs.readdirSync(absolutePath);

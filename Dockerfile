@@ -1,5 +1,5 @@
 # Use a base Node.js image
-FROM node:14
+FROM node:latest
 
 # Set the working directory inside the container
 WORKDIR /usr/src/app
@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install project dependencies
-RUN npm ci
+RUN npm i
 
 # Copy all project files to the working directory
 COPY . .
