@@ -15,6 +15,8 @@ function loadSchemasFromFolder(folderPath) {
     .replace(/@/, '\\')
     .replace(/\//g, '\\');
   const absolutePath = srcPath + aliasPathCorrection;
+  console.log('absolutePath');
+  console.log(absolutePath);
 
   // Read files
   const files = fs.readdirSync(absolutePath);
