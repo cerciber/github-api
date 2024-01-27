@@ -31,7 +31,7 @@ function getSwaggerData() {
   // Set url
   swaggerData.servers = [
     {
-      url: `${config.frameworks.web.express.url}:${config.frameworks.web.express.port}/`,
+      url: `${config.frameworks.web.express.url}/`,
     },
   ];
 
