@@ -18,8 +18,7 @@ function loadSchemasFromFolder(folderPath) {
       .replace(/@/, '/')
       .replace(/\//g, '/');
     absolutePath = srcPath + aliasPathCorrection;
-  }
-  if (config.enviroment === 'develop') {
+  } else if (config.enviroment === 'develop') {
     const absoluteCurrentPathParts = __dirname.split('\\src');
     const srcPath = absoluteCurrentPathParts
       .slice(0, absoluteCurrentPathParts.length - 1)
